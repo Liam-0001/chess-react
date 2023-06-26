@@ -1,0 +1,45 @@
+@import "colors";
+@import "mixins";
+
+#root{
+  display: flex;
+  justify-content: center;
+
+  .board{
+    .board-row {
+      display: flex;
+
+
+      &:nth-child(1n) {
+        .square {
+          @include square();
+
+          &:nth-child(1n) {
+            background: $square-2;
+          }
+
+          &:nth-child(2n) {
+            background: $square-1;
+          }
+        }
+      }
+
+
+      &:nth-child(2n) {
+        .square {
+          @include square();
+
+          &:nth-child(1n) {
+            background: $square-1;
+          }
+
+          &:nth-child(2n) {
+            background: $square-2;
+          }
+        }
+      }
+    }
+  }
+
+
+}

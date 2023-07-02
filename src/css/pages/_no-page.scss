@@ -1,0 +1,16 @@
+.no-page {;
+  grid-area: display-area;
+  display: block;
+  font-weight: bold;
+  font-size: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .error-code {
+    color: red;
+  }
+
+  .error-message {
+    color: mediumpurple;
+  }
+}

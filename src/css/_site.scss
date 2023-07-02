@@ -1,0 +1,14 @@
+@import "pages/no-page";
+@import "pages/home";
+@import "pages/chess";
+@import "navbar";
+
+#root {
+  display: grid;
+  height: 100vh;
+  grid-template: "menu" "display-area";
+  grid-template-rows: 75px auto;
+}
+
+
+

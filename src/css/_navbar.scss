@@ -1,0 +1,38 @@
+#menu-bar {
+  align-items: center;
+  grid-area: menu;
+  background: rgb(119, 100, 100);
+}
+
+#menu {
+  display: flex;
+  min-width: 100px;
+  max-width: 200px;
+  width: 100%;
+
+  .menu-item {
+    padding: 7px;
+    margin: 5px;
+    border-radius: 50px;
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    font-weight: bold;
+
+    &.selected {
+      background: #5f5fc5;
+    }
+
+    &:hover {
+      background: #456c45;
+    }
+  }
+}
+
+@media (min-width: 400px) {
+  #menu-bar {
+    #menu {
+      flex-direction: row;
+    }
+  }
+}

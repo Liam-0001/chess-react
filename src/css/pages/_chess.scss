@@ -1,0 +1,16 @@
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.white, .black {
+  aspect-ratio: 1;
+}
+
+.black {
+  background: gray;
+}
+
+.white {
+  background: #a3d7ba;
+}

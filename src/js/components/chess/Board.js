@@ -1,8 +1,9 @@
 import Square from "./Square";
+import {useDrop} from "react-dnd";
 
-function Board({boardState}) {
+function Board({boardState, updateBoard}) {
+
     let squareInformation = []
-
     let currentCharCode = 97
     for (let i = 0; i < 8; i++) {
         let isWhite = i % 2 === 0
@@ -15,11 +16,13 @@ function Board({boardState}) {
         }
     }
 
-    console.log(squareInformation)
-
     return (
         <div className={"board"}>{squareInformation.map(square =>
-            <Square key={square.coordinate} isWhite={square.isWhite} piece={square.piece}/>
+            <Square key={square.coordinate}
+                    isWhite={square.isWhite}
+                    piece={square.piece}
+                    dropped={updateBoard}
+                    coordinate={square.coordinate}/>
         )}</div>
     )
 }

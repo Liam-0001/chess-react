@@ -1,4 +1,11 @@
+
+.board-game{
+}
+
 .board {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 550px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
@@ -13,4 +20,9 @@
 
 .white {
   background: #a3d7ba;
+}
+
+.chess-piece{
+  max-width: 100%;
+  max-height: 100%;
 }

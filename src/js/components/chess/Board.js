@@ -1,35 +1,26 @@
 import Square from "./Square";
 
-function Board() {
-    let squares = []
+function Board({boardState}) {
+    let squareInformation = []
 
-    let rowBoolean = true
     let currentCharCode = 97
-    let internalCounter = 1
+    for (let i = 0; i < 8; i++) {
+        let isWhite = i % 2 === 0
 
 
-    for (let i = 0; i < 64; i++) {
-        if (i % 8 === 0) {
-            rowBoolean = !rowBoolean
-            internalCounter = 1
-            if (!(i === 0)) currentCharCode += 1
+        for (let j = 0; j < 8; j++) {
+            let coordinate = String.fromCharCode(currentCharCode + i) + (j + 1)
+            squareInformation.push({coordinate: coordinate, isWhite: isWhite, piece: boardState[i][j]})
+            isWhite = !isWhite
         }
-
-        let coordinate = String.fromCharCode(currentCharCode) + internalCounter++
-
-        if (rowBoolean) {
-            squares.push(<Square key={coordinate} coordinate={coordinate}
-                                 colorClass={i % 2 === 0 ? "black" : "white"}/>)
-        } else {
-            squares.push(<Square  key={coordinate} coordinate={coordinate}
-                                 colorClass={i % 2 === 0 ? "white" : "black"}/>)
-        }
-
-
     }
 
+    console.log(squareInformation)
+
     return (
-        <div className={"board"}>{squares}</div>
+        <div className={"board"}>{squareInformation.map(square =>
+            <Square key={square.coordinate} isWhite={square.isWhite} piece={square.piece}/>
+        )}</div>
     )
 }
 
